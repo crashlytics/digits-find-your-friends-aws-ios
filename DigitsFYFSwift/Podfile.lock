@@ -1,0 +1,28 @@
+PODS:
+  - AWSCognito (2.2.5):
+    - AWSCore (= 2.2.5)
+  - AWSCore (2.2.5)
+  - AWSDynamoDB (2.2.5):
+    - AWSCore (= 2.2.5)
+  - Digits (1.9.0)
+  - Fabric (1.4.0):
+    - Fabric/Base (= 1.4.0)
+  - Fabric/Base (1.4.0)
+  - TwitterCore (1.9.0)
+
+DEPENDENCIES:
+  - AWSCognito (~> 2.2.5)
+  - AWSDynamoDB (~> 2.2.5)
+  - Digits (~> 1.9.0)
+  - Fabric (~> 1.4.0)
+  - TwitterCore (~> 1.9.0)
+
+SPEC CHECKSUMS:
+  AWSCognito: df121e01df20a03de311a9cf708cbc25efdb3248
+  AWSCore: 101929899cea9febd4ea4fc85774a63ff17cf809
+  AWSDynamoDB: ddb6d2cea58673ba44266534e87409f42fdda1ec
+  Digits: be373967dc2c51917941228d79b231340e2a2dca
+  Fabric: 6d1d1c1eaf7ebc76fc3307e2c0259456411baf26
+  TwitterCore: 98ed97a6047c4ef109522840337e815683ead7e5
+
+COCOAPODS: 0.38.2

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8187.4" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="aRO-WC-Wuj">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8151.3"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="DigitsFYF" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="4uT-nc-yIV"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="570" y="429"/>
+        </scene>
+        <!--Contacts View Controller-->
+        <scene sceneID="rlX-rV-KAz">
+            <objects>
+                <viewController storyboardIdentifier="contacts" id="DaG-NT-IEf" customClass="ContactsViewController" customModule="DigitsFYF" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sH5-sg-aQv"/>
+                        <viewControllerLayoutGuide type="bottom" id="XGV-0B-OuJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Cjd-f8-ZfC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zet-Hn-GKk">
+                                <rect key="frame" x="131" y="231" width="339" height="137"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="137" id="Ypt-60-Uv2"/>
+                                    <constraint firstAttribute="width" constant="339" id="lX9-ds-Wde"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Zet-Hn-GKk" firstAttribute="centerX" secondItem="Cjd-f8-ZfC" secondAttribute="centerX" id="TBv-uq-ITD"/>
+                            <constraint firstItem="Zet-Hn-GKk" firstAttribute="centerY" secondItem="Cjd-f8-ZfC" secondAttribute="centerY" id="aW7-qG-fwG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="lblFriendName" destination="Zet-Hn-GKk" id="FOQ-2Z-NBb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QBZ-0e-0II" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="568" y="1101"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="B20-bT-KEe">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aRO-WC-Wuj" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="r4U-Xe-1o3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="Su0-xt-WNy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="86M-SB-LG2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-184" y="414"/>
+        </scene>
+    </scenes>
+</document>

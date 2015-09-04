@@ -28,7 +28,7 @@ Ensure that all AWS instances are located in US-East, so that they can make full
 2. Create a new Identity Pool and set Twitter Consumer Key and Consumer Secret. You can find
 them by opening the `Info.plist` file in the project and drilling down the `Fabric` item. 
 
-<img src="/screenshots/cognito.png" width="400">
+<img src="/screenshots/cognito.png" width="600">
 
 4. Allow AWS to create IAM roles for the Cognito identity.
 5. Copy the pool id into `Constants.swift` as the value of the `CognitoIdentityPoolId` constant. 

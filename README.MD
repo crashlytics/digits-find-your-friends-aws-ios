@@ -1,40 +1,33 @@
-# Find Your Friends using Digits and AWS (Cognito, DynamoDB)
+# Find Your Friends using Digits and AWS
 
 This is a sample demonstrating [Digits](http://digits.com) "Find Your Friends" [feature] (https://docs.fabric.io/ios/digits/find-friends.html) with AWS Cognito and AWS DynamoDB as the backend. Digits is available via [Fabric] (https://fabric.io).
 
 ## Requirements
 
-The requirements needed to use this sample code are:
-
 1. [Xcode 7] (https://developer.apple.com/xcode/downloads/)
 2. [Fabric] (https://fabric.io)
 3. [Amazon Web Services] (http://aws.amazon.com/) 
-
-## Steps to run sample code
 
 Ensure that all AWS instances are located in US-East, so that they can make full use of Cognito and can connect to one another.
 
 ### Setup Digits
 
-1. Sign up for [Fabric](https://fabric.io)
-2. Download, install, and run the [Fabric Mac app] (https://fabric.io/downloads/xcode)
-3. In Fabric.app, click "+ New App" and open DigitsFYF.xcworkspace
-  * Install the Digits kit via a Podfile. When prompted, ignore the suggested pod snippets
-4. In Xcode, open DigitsFYF.xcworkspace
-  * Add the Run Script Build Phase from Fabric.app to the DigitsFYF target
-  * Build the project
-5. In Fabric.app, when prompted, ignore the suggested Swift snippets
+1. Sign up for [Fabric](https://fabric.io).
+2. Download, install, and run the [Fabric Mac app] (https://fabric.io/downloads/xcode).
+3. In Fabric.app, click "+ New App" and open `DigitsFYF.xcworkspace`.
+  * Install the Digits kit via a Podfile. When prompted, ignore the suggested pod snippets.
+4. In Xcode, open `DigitsFYF.xcworkspace`.
+  * Add the Run Script Build Phase from Fabric.app to the DigitsFYF target.
+  * Build the project.
+5. In Fabric.app, when prompted, ignore the suggested Swift snippets.
 6. In Xcode, run the project.  
 
-The app should now appear in your Fabric dashboard.
+### Setup Cognito
 
-### Setup AWS Cognito
-
-1. Log into the Amazon Cognito console (https://console.aws.amazon.com/cognito)
-2. Click on "Create new Identity pool"
-3. Specify a name for the pool and your Twitter/Digits Consumer Key and Consumer Secret. You can find
-them by opening the `Info.plist` file in the project and drilling down the Fabric item. 
-4. Click "Allow" button when asked to create new AWS IAM roles for the Cognito identity.
+1. Log into the [Cognito console] (https://console.aws.amazon.com/cognito)
+2. Create a new Identity Pool and set Twitter Consumer Key and Consumer Secret. You can find
+them by opening the `Info.plist` file in the project and drilling down the `Fabric` item. 
+4. Allow AWS to create IAM roles for the Cognito identity.
 5. Copy the pool id into `Constants.swift` as the value of the `CognitoIdentityPoolId` constant. 
 
 ### Setup AWS DynamoDB

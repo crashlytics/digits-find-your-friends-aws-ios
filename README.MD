@@ -25,23 +25,25 @@ Ensure that all AWS instances are located in US-East, so that they can make full
 ### Setup Cognito
 
 1. Log into the [Cognito console] (https://console.aws.amazon.com/cognito)
-2. Create a new Identity Pool and set Twitter Consumer Key and Consumer Secret. You can find
-them by opening the `Info.plist` file in the project and drilling down the `Fabric` item. 
+2. Create a new Identity Pool and set the Twitter (Digits) API credentials. You can find the Consumer Key and Consumer Secret by opening the `Info.plist` file in the project and drilling down the `Fabric` item. 
 
 <img src="/screenshots/cognito.png" width="600">
 
-4. Allow AWS to create IAM roles for the Cognito identity.
-5. Copy the pool id into `Constants.swift` as the value of the `CognitoIdentityPoolId` constant. 
+<img src="/screenshots/plist.png" width="600">
 
-### Setup AWS DynamoDB
+3. Allow AWS to create IAM roles for the new identity.
+4. Set the pool id as the value of `CognitoIdentityPoolId` in `Constants.swift`. 
 
-1. Log into the Amazon DynamoDB console (https://console.aws.amazon.com/dynamodb)
-2. Create a table
-3. Copy the table name into `Constants.swift` as the value of the `AWSSampleDynamoDBTableName` constant.
-4. Add the Primary Key Type as "Hash" with Hash Name as "CognitoId" and String type
-5. Add a Global Secondary Index with Index Hash Name set to "DigitsId" and String type
-6. Add a Global Secondary Index with Index Hash Name set to "PhoneNumber" and String type
-7. After the table has been created, click "Details" and copy the Amazon Resource Name (ARN).
+### Setup DynamoDB
+
+1. Log into the [DynamoDB console] (https://console.aws.amazon.com/dynamodb)
+2. Create a new table `Users`.
+3. Add a Primary Key Type hash named `CognitoId` (String).
+4. Add a Global Secondary Index named `DigitsId` (String).
+5. Add a Global Secondary Index named `PhoneNumber` (String).
+6. After the table has been created, copy its Amazon Resource Name (ARN) in the "Details" tab.
+
+<img src="/screenshots/arn.png" width="600">
 
 ### Setup AWS Identity and Access Management
 

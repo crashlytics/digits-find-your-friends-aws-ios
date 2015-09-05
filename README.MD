@@ -24,8 +24,8 @@ Ensure that all AWS instances are located in US-East, so that they can make full
 
 ### Setup Cognito
 
-1. Log into the [Cognito console] (https://console.aws.amazon.com/cognito)
-2. Create a new Identity Pool and set the Twitter (Digits) API credentials. You can find the Consumer Key and Consumer Secret by opening the `Info.plist` file in the project and drilling down the `Fabric` item. 
+1. Log into the [Cognito console] (https://console.aws.amazon.com/cognito).
+2. Create a new Identity Pool named `DigitsFYF` and set the Twitter (Digits) API credentials. You can find the Consumer Key and Consumer Secret by opening the `Info.plist` file in the project and drilling down the `Fabric` item. 
 <img src="/screenshots/cognito.png" width="600">
 <img src="/screenshots/plist.png" width="600">
 3. Allow AWS to create IAM roles for the new identity.
@@ -33,48 +33,49 @@ Ensure that all AWS instances are located in US-East, so that they can make full
 
 ### Setup DynamoDB
 
-1. Log into the [DynamoDB console] (https://console.aws.amazon.com/dynamodb)
+1. Log into the [DynamoDB console] (https://console.aws.amazon.com/dynamodb).
 2. Create a new table `Users`.
-3. Add a Primary Key Type hash named `CognitoId` (String).
-4. Add a Global Secondary Index named `DigitsId` (String).
-5. Add a Global Secondary Index named `PhoneNumber` (String).
-6. After the table has been created, copy its Amazon Resource Name (ARN) in the "Details" tab.
-
+3. Add a Primary Key hash named `CognitoId` (Type String).
+4. Add a Global Secondary Index named `DigitsId` (Type String).
+5. Add a Global Secondary Index named `PhoneNumber` (Type String).
+6. After the table has been created, copy its Amazon Resource Name (ARN) somewhere. 
 <img src="/screenshots/arn.png" width="600">
 
 ### Setup AWS Identity and Access Management
 
-1. Log into the Amazon IAM console (https://console.aws.amazon.com/iam/)
-2. Click "Roles" and select `Cognito_FOOAuth_Role`, where FOO is the name of Identity Pool you created earlier.
-3. There should be a single Inline Policy, click "Edit Policy"
-4. Replace the policy by one that allows access to the DynamoDB table you've created earlier:
-
+1. Log into the [IAM console] (https://console.aws.amazon.com/iam).
+2. In the "Roles" tab, select `Cognito_DigitsFYFAuth_Role` and change its only policy to the following:
 ```
 {
-    "Version": "2012-10-17",
+    "Version": "2015-09-04",
     "Statement": [
         {
             "Effect": "Allow",
             "Action": "dynamodb:*",
             "Resource": [
-                "YOUR_TABLE_ARN",
-                "YOUR_TABLE_ARN/DigitsId-index"
+                "YOUR_TABLE'S_ARN",
+                "YOUR_TABLES'S_ARN/DigitsId-index"
             ]
         }
     ]
 }
 ``` 
 
+Note that that you need to put your table's ARN in the policy. 
+
 ## Project
 
-The sample demonstrates the following flow:
+Here's an easy way to see the sample in action:
 
-1. User A logins into the app using phone number X.
-2. User B has User A and phone number X in the his/her's Contacts. 
-3. User B logins into the app using phone number Y.
-4. User B is alerted that User A is already using the app. The app 
-displays User A's name as set by User B in his/her's Contacts. 
+1. Run the app on the iPhone 5 simulator. 
+  * Use your phone number to login and accept the prompt to upload the simulator's contacts to Digits. 
+2. Launch the iPhone 6 simulator. 
+  * Add yourself as a contact with the number you've used in Step 1. 
+3. Run the app on the iPhone 6 simulator.
+  * Use another phone number to login and accept the prompt to upload the simulator's contacts to Digits.
+  * The app will display your name that you've entered in the contacts as an existing user of the app.  
 
+If you don't have a second phone number, you can use something like Google Voice. 
 
 ## Additional reading
 

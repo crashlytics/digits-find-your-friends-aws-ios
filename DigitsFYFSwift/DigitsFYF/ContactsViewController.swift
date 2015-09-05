@@ -44,7 +44,7 @@ class ContactsViewController: UIViewController {
                         // not supported. See https://github.com/aws/aws-sdk-ios/issues/162
                         let queryInput = AWSDynamoDBQueryInput()
                         
-                        queryInput.tableName = AWSSampleDynamoDBTableName
+                        queryInput.tableName = "Users"
                         queryInput.indexName = "DigitsId-index"
                         
                         let hashValue = AWSDynamoDBAttributeValue()

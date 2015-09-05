@@ -9,4 +9,3 @@
 import Foundation
 
 let CognitoIdentityPoolId = ""
-let AWSSampleDynamoDBTableName = ""

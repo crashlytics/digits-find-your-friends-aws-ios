@@ -14,7 +14,7 @@ class User : AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     var PhoneNumber : String? { didSet { print("Your phone number: " + PhoneNumber!) } }
     
     static func dynamoDBTableName() -> String {
-        return AWSSampleDynamoDBTableName
+        return "Users"
     }
     
     static func hashKeyAttribute() -> String {

@@ -25,7 +25,7 @@ Ensure that all AWS instances are located in US-East, so that they can make full
 ### Setup Cognito
 
 1. Log into the [Cognito console] (https://console.aws.amazon.com/cognito).
-2. Create a new Identity Pool named `DigitsFYF` and set the Twitter (Digits) API credentials. You can find the Consumer Key and Consumer Secret by opening the `Info.plist` file in the project and drilling down the `Fabric` item. 
+2. Create a new Identity Pool named `DigitsSample` and set the Twitter (Digits) API credentials. You can find the Consumer Key and Consumer Secret by opening the `Info.plist` file in the project and drilling down the `Fabric` item. 
 <img src="/screenshots/cognito.png" width="600">
 <img src="/screenshots/plist.png" width="600">
 3. Allow AWS to create IAM roles for the new identity.
@@ -44,17 +44,17 @@ Ensure that all AWS instances are located in US-East, so that they can make full
 ### Setup AWS Identity and Access Management
 
 1. Log into the [IAM console] (https://console.aws.amazon.com/iam).
-2. In the "Roles" tab, select `Cognito_DigitsFYFAuth_Role` and change its only policy to the following:
+2. In the "Roles" tab, select `Cognito_DigitsSampleAuth_Role` and change its only policy to the following:
 ```
 {
-    "Version": "2015-09-04",
+    "Version": "2012-10-17",
     "Statement": [
         {
             "Effect": "Allow",
             "Action": "dynamodb:*",
             "Resource": [
                 "YOUR_TABLE'S_ARN",
-                "YOUR_TABLES'S_ARN/DigitsId-index"
+                "YOUR_TABLES'S_ARN/index/DigitsId-index"
             ]
         }
     ]
@@ -73,7 +73,7 @@ Here's an easy way to see the sample in action:
   * Add yourself as a contact with the number you've used in Step 1. 
 3. Run the app on the iPhone 6 simulator.
   * Use another phone number to login and accept the prompt to upload the simulator's contacts to Digits.
-  * The app will display your name that you've entered in the contacts as an existing user of the app.  
+  * The app will display confirm that the person from Step 2 is an existing user. 
 
 If you don't have a second phone number, you can use something like Google Voice. 
 

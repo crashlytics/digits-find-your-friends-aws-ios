@@ -5,7 +5,7 @@
 //  Copyright (c) 2015 Twitter Inc. All rights reserved.
 //
 
-#import <TwitterCore/TWTRCoreOAuthSigning.h>
+@import TwitterCore;
 
 @class TWTRAuthConfig;
 @class DGTSession;

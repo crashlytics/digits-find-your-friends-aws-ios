@@ -20,7 +20,7 @@
 #error "Digits doesn't support iOS 6.x and lower. Please, change your minimum deployment target to iOS 7.0"
 #endif
 
-#import <TwitterCore/TwitterCore.h>
+@import TwitterCore;
 
 #import "DGTContacts.h"
 #import "DGTContactsUploadResult.h"

@@ -5,7 +5,7 @@
 //
 
 #import "DGTErrors.h"
-#import <TwitterCore/TWTRAuthSession.h>
+@import TwitterCore;
 
 /**
  *  A `DGTSession` object contains user session information after a successful Digits authentication.

@@ -8,7 +8,7 @@
 #import "DGTAuthenticateButton.h"
 #import "DGTContactAccessAuthorizationStatus.h"
 #import "DGTSession.h"
-#import <TwitterCore/TWTRAuthConfig.h>
+@import TwitterCore;
 
 @class UIViewController;
 @class TWTRAuthConfig;

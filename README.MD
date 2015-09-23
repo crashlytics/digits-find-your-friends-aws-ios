@@ -24,6 +24,7 @@ This is a sample demonstrating [Digits](http://digits.com) "Find Your Friends" [
 4. Set the identity pool id as the value of `CognitoIdentityPoolId` in `Constants.swift`. 
 5. Log into the [IAM console] (https://console.aws.amazon.com/iam).
 6. In the "Roles" tab, select `Cognito_DigitsSampleAuth_Role` and attach the policy named `AmazonDynamoDBFullAccess`.
+   <img src="/screenshots/iam.png" width="600">
 
 ### Setup DynamoDB
 

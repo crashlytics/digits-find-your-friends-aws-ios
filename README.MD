@@ -39,10 +39,14 @@ This is a sample demonstrating [Digits](http://digits.com) "Find Your Friends" [
 
 1. Run the app on the iPhone 5 simulator. 
   * Use your phone number to login and accept the prompt to upload the simulator's contacts to Digits. 
-3. Run the app on the iPhone 6 simulator.
-  * Minimize the app (Hardware > Home), open the Contacts app and add a contact named "Bob" with the number you've used in Step 1. 
+  * The app will show a blank screen.
+2. Run the app on the iPhone 6 simulator.
+  * Minimize the app (Hardware > Home), open the Contacts app and add a contact named "Larry" with the number you've used in Step 1. 
   * Use another phone number to login and accept the prompt to upload the simulator's contacts to Digits. You can create a second phone number using [Google Voice] (https://www.google.com/voice). 
-  * The app will confirm that "Bob" is an existing user of the app. 
+  * The app will confirm that "Larry" is an existing user of the app. 
+3. Run the app on the iPhone 5 simulator again. 
+  * Login again.
+  * This time, the app will confirm that someone you know is using the app, eg. the iPhone 6 simulator has "Larry" in his/hers contacts. 
 
 ## Compatibility
 

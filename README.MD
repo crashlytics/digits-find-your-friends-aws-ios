@@ -1,6 +1,6 @@
 # Find Your Friends using Digits and AWS
 
-This is a sample demonstrating [Digits](http://digits.com) "Find Your Friends" [feature] (https://docs.fabric.io/ios/digits/find-friends.html) with Amazon Cognito and DynamoDB as the backend. Digits is available via [Fabric] (https://fabric.io).
+This is a sample demonstrating [Digits](http://digits.com) "Find Your Friends" [feature] (https://docs.fabric.io/ios/digits/find-friends.html) with Amazon [Cognito] (https://aws.amazon.com/cognito/) and [DynamoDB] (https://aws.amazon.com/dynamodb/) as the backend. Digits is available via [Fabric] (https://fabric.io).
 
 ### Setup Digits
 

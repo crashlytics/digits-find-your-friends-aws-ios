@@ -21,6 +21,7 @@ This is a sample demonstrating [Digits](http://digits.com) "Find Your Friends" [
 
 <img src="/screenshots/cognito.png" width="600">
 <img src="/screenshots/plist.png" width="600">
+
 3. Allow AWS to create new IAM roles for the identity pool. 
 4. Set the identity pool id as the value of `CognitoIdentityPoolId` in `Constants.swift`. 
 5. Log into the [IAM console] (https://console.aws.amazon.com/iam).

@@ -18,7 +18,7 @@ This is a sample demonstrating [Digits](http://digits.com) "Find Your Friends" [
 
 1. Log into the [Cognito console] (https://console.aws.amazon.com/cognito).
 2. Create a new Identity Pool named `DigitsSample` and set the Twitter (Digits) API credentials. You can find the Consumer Key and Consumer Secret by opening the `Info.plist` file in the project and drilling down the item named `Fabric`.
-3. 
+
 <img src="/screenshots/cognito.png" width="600">
 <img src="/screenshots/plist.png" width="600">
 3. Allow AWS to create new IAM roles for the identity pool. 

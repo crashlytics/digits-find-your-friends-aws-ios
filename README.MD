@@ -1,6 +1,6 @@
 # Find Your Friends using Digits and AWS
 
-This is a sample demonstrating [Digits](http://digits.com) "Find Your Friends" [feature] (https://docs.fabric.io/ios/digits/find-friends.html) with AWS Cognito and AWS DynamoDB as the backend. Digits is available via [Fabric] (https://fabric.io).
+This is a sample demonstrating [Digits](http://digits.com) "Find Your Friends" [feature] (https://docs.fabric.io/ios/digits/find-friends.html) with Amazon Cognito and DynamoDB as the backend. Digits is available via [Fabric] (https://fabric.io).
 
 ## Requirements
 
@@ -25,11 +25,14 @@ Ensure that all AWS instances are located in US-East, so that they can make full
 ### Setup Cognito
 
 1. Log into the [Cognito console] (https://console.aws.amazon.com/cognito).
-2. Create a new Identity Pool named `DigitsSample` and set the Twitter (Digits) API credentials. You can find the Consumer Key and Consumer Secret by opening the `Info.plist` file in the project and drilling down the `Fabric` item. 
+2. Create a new Identity Pool named `DigitsSample` and set the Twitter (Digits) API credentials. You can find the Consumer Key and Consumer Secret by opening the `Info.plist` file in the project and drilling down the `Fabric` item.
+3. 
 <img src="/screenshots/cognito.png" width="600">
 <img src="/screenshots/plist.png" width="600">
-3. Allow AWS to create IAM roles for the new identity.
-4. Set the pool id as the value of `CognitoIdentityPoolId` in `Constants.swift`. 
+3. Allow AWS to create IAM roles for the identity pool. 
+4. Set the identity pool id as the value of `CognitoIdentityPoolId` in `Constants.swift`. 
+5. Log into the [IAM console] (https://console.aws.amazon.com/iam).
+6. In the "Roles" tab, select `Cognito_DigitsSampleAuth_Role` and attach the policy named `AmazonDynamoDBFullAccess`.
 
 ### Setup DynamoDB
 
@@ -38,30 +41,6 @@ Ensure that all AWS instances are located in US-East, so that they can make full
 3. Add a Primary Key hash named `CognitoId` (Type String).
 4. Add a Global Secondary Index named `DigitsId` (Type String).
 5. Add a Global Secondary Index named `PhoneNumber` (Type String).
-6. After the table has been created, copy its Amazon Resource Name (ARN) somewhere. 
-<img src="/screenshots/arn.png" width="600">
-
-### Setup AWS Identity and Access Management
-
-1. Log into the [IAM console] (https://console.aws.amazon.com/iam).
-2. In the "Roles" tab, select `Cognito_DigitsSampleAuth_Role` and change its only policy to the following:
-```
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Action": "dynamodb:*",
-            "Resource": [
-                "YOUR_TABLE'S_ARN",
-                "YOUR_TABLES'S_ARN/index/DigitsId-index"
-            ]
-        }
-    ]
-}
-``` 
-
-Note that that you need to put your table's ARN in the policy. 
 
 ## Project
 
@@ -69,11 +48,10 @@ Here's an easy way to see the sample in action:
 
 1. Run the app on the iPhone 5 simulator. 
   * Use your phone number to login and accept the prompt to upload the simulator's contacts to Digits. 
-2. Launch the iPhone 6 simulator. 
-  * Add yourself as a contact with the number you've used in Step 1. 
 3. Run the app on the iPhone 6 simulator.
+  * Minimize the app, open the Contacts app and add a contact named "Bob" with the number you've used in Step 1. 
   * Use another phone number to login and accept the prompt to upload the simulator's contacts to Digits.
-  * The app will display confirm that the person from Step 2 is an existing user. 
+  * The app will confirm that "Bob" is an existing user. 
 
 If you don't have a second phone number, you can use something like Google Voice. 
 
@@ -87,7 +65,7 @@ The following documents serve as additional information on the Amazon platform a
 
 ## Compatibility
 
-This project was written in Swift 2 on Xcode 7b6.
+This project was written in Swift 2 on Xcode 7 GM.
 
 ## License
 

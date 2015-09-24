@@ -15,31 +15,29 @@ class ContactsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         let digitsSession = Digits.sharedInstance().session()
         let contacts = DGTContacts(userSession: digitsSession)
         
         contacts.startContactsUploadWithCompletion { result, error in
             if (result != nil) {
                 print("Your " + String(result.numberOfUploadedContacts) + " contacts have been successfully stored in Digits")
-
+                
                 contacts.lookupContactMatchesWithCursor(nil) { matches, nextCursor, error in
                     if (matches != nil) {
-                        // Grabbing a single match for demo purposes
-                        let match = matches[0] as! DGTUser
-                        
-                        self.queryDynamoDB(match.userID, completion: { (success) -> Void in
-                            if (success) {
-                                
+                        if (matches.count > 0) {
+                            // Grabbing a single match for demo purposes
+                            let match = matches[0] as! DGTUser
+                            self.queryDynamoDB(match.userID)
+                        }
+                        else
+                        {
+                            print("No friends found")
+                            dispatch_async(dispatch_get_main_queue()) {
+                                self.lblFriendName.text = "Looks like you're the first among your friends to use this app."
                             }
-                        })
-                        
+                        }
                     }
-                    else
-                    {
-                        self.lblFriendName.text = "Looks like you're the first user among your friends."
-                    }
-                    
                 }
             }
             
@@ -49,7 +47,7 @@ class ContactsViewController: UIViewController {
         }
     }
     
-    func queryDynamoDB(digitsId : String, completion: (success: Bool) -> Void) {
+    func queryDynamoDB(digitsId : String) {
         let dynamo = AWSDynamoDBObjectMapper.defaultDynamoDBObjectMapper()
         let queryExpression = AWSDynamoDBQueryExpression()
         
@@ -73,22 +71,16 @@ class ContactsViewController: UIViewController {
                         
                         if (localContactName != "") {
                             dispatch_async(dispatch_get_main_queue()) {
-                                self.lblFriendName.text = "Looks like your friend " + localContactName.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) + " is already using this app!"
+                                self.lblFriendName.text = localContactName.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) + " is already using this app!"
                             }
                         }
                         else
                         {
                             dispatch_async(dispatch_get_main_queue()) {
-                                self.lblFriendName.text = "Looks like someone you know is already using this app, but we couldn't find him/her in your contacts."
+                                self.lblFriendName.text = "Looks like someone you know is using this app."
                             }
                         }
                         
-                    }
-                }
-                else {
-                    print("No friends found")
-                    dispatch_async(dispatch_get_main_queue()) {
-                        self.lblFriendName.text = "Looks like you're the first among your friends to use this app."
                     }
                 }
             }
@@ -103,7 +95,7 @@ class ContactsViewController: UIViewController {
             
             return nil
         }
-
+        
     }
     
     // Find a local contact's name by phone number
@@ -126,8 +118,8 @@ class ContactsViewController: UIViewController {
         }
         catch let error as NSError {
             print(error.localizedDescription)
-        } 
-
+        }
+        
         return name
     }
 }

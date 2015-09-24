@@ -9,16 +9,16 @@
 import Foundation
 
 class User : AWSDynamoDBObjectModel, AWSDynamoDBModeling {
-    var CognitoId : String? { didSet { print("Your CognitoId: " + CognitoId!) } }
-    var DigitsId : String? { didSet { print("Your DigitsId: " + DigitsId!) } }
-    var PhoneNumber : String? { didSet { print("Your phone number: " + PhoneNumber!) } }
+    var cognitoId : String?
+    var digitsId : String?
+    var phoneNumber : String?
     
     static func dynamoDBTableName() -> String {
-        return "Users"
+        return "users"
     }
     
     static func hashKeyAttribute() -> String {
-        return "CognitoId"
+        return "cognitoId"
     }
     
     override func isEqual(anObject: AnyObject?) -> Bool {

@@ -2,9 +2,9 @@
 # platform :ios, '6.0'
 
 target 'DigitsFYF' do
-  pod 'Fabric', '~> 1.4.0'
+  pod 'Fabric', '~> 1.5.1' 
   pod 'TwitterCore', '~> 1.9.0'
   pod 'Digits', '~> 1.9.0'
-  pod 'AWSCognito', '~> 2.2.5'
-  pod 'AWSDynamoDB', '~> 2.2.5'
+  pod 'AWSCognito', '~> 2.2.6'
+  pod 'AWSDynamoDB', '~> 2.2.6'
 end

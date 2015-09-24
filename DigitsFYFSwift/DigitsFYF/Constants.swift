@@ -8,4 +8,6 @@
 
 import Foundation
 
-let CognitoIdentityPoolId = ""
+struct Constants {
+    static let CognitoIdentityPoolId = ""
+}

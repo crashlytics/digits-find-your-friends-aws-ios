@@ -8,14 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		04048DE61B8960AB003FB0BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04048DE51B8960AB003FB0BF /* AppDelegate.swift */; };
-		04048DE81B8960AB003FB0BF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04048DE71B8960AB003FB0BF /* ViewController.swift */; };
 		04048DEB1B8960AB003FB0BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04048DE91B8960AB003FB0BF /* Main.storyboard */; };
 		04048DED1B8960AB003FB0BF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04048DEC1B8960AB003FB0BF /* Images.xcassets */; };
 		04048DF01B8960AB003FB0BF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04048DEE1B8960AB003FB0BF /* LaunchScreen.xib */; };
-		0415474E1B9634A90073BC6F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415474D1B9634A90073BC6F /* Extensions.swift */; settings = {ASSET_TAGS = (); }; };
 		0439F8BA1B910C1D00317B6C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0439F8B91B910C1D00317B6C /* Constants.swift */; };
 		045C8B751B89693900503B72 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045C8B741B89693900503B72 /* ContactsViewController.swift */; };
 		046E12B61B8BCAF900204910 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E12B51B8BCAF900204910 /* User.swift */; };
+		04C6F06B1BB464010013AB95 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6F06A1BB464010013AB95 /* StringExtensions.swift */; settings = {ASSET_TAGS = (); }; };
+		04C6F06D1BB47C640013AB95 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6F06C1BB47C640013AB95 /* LoginViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		08134105CEE3B3E1D9BB5C48 /* libPods-DigitsFYF.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65C0BDA570F3B45C1B697098 /* libPods-DigitsFYF.a */; };
 /* End PBXBuildFile section */
 
@@ -24,15 +24,15 @@
 		04048DE01B8960AB003FB0BF /* DigitsFYF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DigitsFYF.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04048DE41B8960AB003FB0BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04048DE51B8960AB003FB0BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		04048DE71B8960AB003FB0BF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		04048DEA1B8960AB003FB0BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		04048DEC1B8960AB003FB0BF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		04048DEF1B8960AB003FB0BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		0415474D1B9634A90073BC6F /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		0439F8B91B910C1D00317B6C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		045C8B741B89693900503B72 /* ContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		046E12B51B8BCAF900204910 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		046E12B91B8BD59700204910 /* DigitsFYF-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DigitsFYF-Bridging-Header.h"; sourceTree = "<group>"; };
+		04C6F06A1BB464010013AB95 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		04C6F06C1BB47C640013AB95 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2CE016F308917C619969E79C /* Pods-DigitsFYF.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigitsFYF.release.xcconfig"; path = "Pods/Target Support Files/Pods-DigitsFYF/Pods-DigitsFYF.release.xcconfig"; sourceTree = "<group>"; };
 		65C0BDA570F3B45C1B697098 /* libPods-DigitsFYF.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DigitsFYF.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -70,17 +70,17 @@
 		04048DE21B8960AB003FB0BF /* DigitsFYF */ = {
 			isa = PBXGroup;
 			children = (
+				04C6F06C1BB47C640013AB95 /* LoginViewController.swift */,
+				04C6F06A1BB464010013AB95 /* StringExtensions.swift */,
 				046E12B91B8BD59700204910 /* DigitsFYF-Bridging-Header.h */,
 				04048DE51B8960AB003FB0BF /* AppDelegate.swift */,
 				0439F8B91B910C1D00317B6C /* Constants.swift */,
 				045C8B741B89693900503B72 /* ContactsViewController.swift */,
 				046E12B51B8BCAF900204910 /* User.swift */,
-				04048DE71B8960AB003FB0BF /* ViewController.swift */,
 				04048DEC1B8960AB003FB0BF /* Images.xcassets */,
 				04048DEE1B8960AB003FB0BF /* LaunchScreen.xib */,
 				04048DE91B8960AB003FB0BF /* Main.storyboard */,
 				04048DE31B8960AB003FB0BF /* Supporting Files */,
-				0415474D1B9634A90073BC6F /* Extensions.swift */,
 			);
 			path = DigitsFYF;
 			sourceTree = "<group>";
@@ -216,10 +216,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04C6F06D1BB47C640013AB95 /* LoginViewController.swift in Sources */,
 				0439F8BA1B910C1D00317B6C /* Constants.swift in Sources */,
-				0415474E1B9634A90073BC6F /* Extensions.swift in Sources */,
 				046E12B61B8BCAF900204910 /* User.swift in Sources */,
-				04048DE81B8960AB003FB0BF /* ViewController.swift in Sources */,
+				04C6F06B1BB464010013AB95 /* StringExtensions.swift in Sources */,
 				04048DE61B8960AB003FB0BF /* AppDelegate.swift in Sources */,
 				045C8B751B89693900503B72 /* ContactsViewController.swift in Sources */,
 			);

@@ -31,22 +31,18 @@ This is a sample demonstrating [Digits](http://digits.com) "Find Your Friends" [
 ### Setup DynamoDB
 
 1. Log into the [DynamoDB console] (https://console.aws.amazon.com/dynamodb).
-2. Create a new table `Users`.
-3. Add a Primary Key hash named `CognitoId` (Type String).
-4. Add Global Secondary indices named `DigitsId` (Type String) and `PhoneNumber` (Type String).
+2. Create a new table `users`.
+3. Add a Primary Key hash named `cognitoId` (Type String).
+4. Add Global Secondary indices named `digitsId` (Type String) and `phoneNumber` (Type String).
 
 ## Project
 
 1. Run the app on the iPhone 5 simulator. 
   * Use your phone number to login and accept the prompt to upload the simulator's contacts to Digits. 
-  * The app will show a blank screen.
 2. Run the app on the iPhone 6 simulator.
   * Minimize the app (Hardware > Home), open the Contacts app and add a contact named "Larry" with the number you've used in Step 1. 
   * Use another phone number to login and accept the prompt to upload the simulator's contacts to Digits. You can create a second phone number using [Google Voice] (https://www.google.com/voice). 
-  * The app will confirm that "Larry" is an existing user of the app. 
 3. Run the app on the iPhone 5 simulator again. 
-  * Login again.
-  * This time, the app will confirm that someone you know is using the app, eg. the iPhone 6 simulator has "Larry" in his/hers contacts. 
 
 ## Compatibility
 

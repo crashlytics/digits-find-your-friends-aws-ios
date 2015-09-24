@@ -10,6 +10,7 @@ import UIKit
 import DigitsKit
 
 class ViewController: UIViewController {
+    // These don't have to be optional since you initialize them all in init
     let credentialProvider : AWSCognitoCredentialsProvider?
     let configuration : AWSServiceConfiguration?
     let dbMapper : AWSDynamoDBObjectMapper?
@@ -53,9 +54,10 @@ class ViewController: UIViewController {
     func saveToDynamoDB() {
         let digitsSession = Digits.sharedInstance().session()
         
+        // If `saveToDynamoDB` is dependent on `saveToCognito` continuing, consider having save to cognito take a completion block and having it refresh and call that completion block itself.
         self.credentialProvider!.refresh().continueWithBlock { (task) -> AnyObject! in
             let user = User()
-            
+            // Perhaps add an init method to User that takes all these instead of setting them like this?
             user.CognitoId = self.credentialProvider!.identityId
             user.DigitsId = digitsSession.userID
             user.PhoneNumber = digitsSession.phoneNumber

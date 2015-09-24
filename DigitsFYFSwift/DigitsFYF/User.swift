@@ -9,6 +9,7 @@
 import Foundation
 
 class User : AWSDynamoDBObjectModel, AWSDynamoDBModeling {
+    // Don't usually see capitalized properties. Is this required by AWS?
     var CognitoId : String? { didSet { print("Your CognitoId: " + CognitoId!) } }
     var DigitsId : String? { didSet { print("Your DigitsId: " + DigitsId!) } }
     var PhoneNumber : String? { didSet { print("Your phone number: " + PhoneNumber!) } }

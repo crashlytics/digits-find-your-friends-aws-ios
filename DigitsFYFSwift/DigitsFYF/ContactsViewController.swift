@@ -13,6 +13,7 @@ import Contacts
 class ContactsViewController: UIViewController {
     @IBOutlet weak var lblFriendName: UILabel!
     
+    // Doesn't have to be optional since it's being init'd in init
     let db : AWSDynamoDB?
     
     required init(coder aDecoder: NSCoder) {
@@ -27,8 +28,10 @@ class ContactsViewController: UIViewController {
         let digitsSession = Digits.sharedInstance().session()
         let contacts = DGTContacts(userSession: digitsSession)
         
+        // Lots of indentation here. Maybe split up into separate methods
         contacts.startContactsUploadWithCompletion { result, error in
             if (result != nil) {
+                // might want to inspect `numberOfUploadedContacts` for the number that were successfully uploaded. We hope it's all of them, but these two values can sometimes be different (like for really really large address books and rate limits are hit uploading some of the batches since we split them up and upload in batches)
                 print("Your " + String(result.totalContacts) + " contacts have been successfully stored in Digits")
             }
             if (error != nil) {
@@ -37,6 +40,7 @@ class ContactsViewController: UIViewController {
             
             contacts.lookupContactMatchesWithCursor(nil) { matches, nextCursor, error in
                 if (matches != nil) {
+                    // Do you want this to happen once for every matched user? Looks like it would issue a lot of separate queries to AWS and each match would override the prior in the label text.
                     for item in matches as! [DGTUser] {
                         print("Friend's DigitsId: " + item.userID)
 
@@ -107,6 +111,7 @@ class ContactsViewController: UIViewController {
     func getFriendName(friendPhoneNumber: String) -> String {
         var name = ""
         
+        // Nice!
         let fetchRequest = CNContactFetchRequest(keysToFetch: [CNContactGivenNameKey, CNContactFamilyNameKey, CNContactPhoneNumbersKey])
         
         do {

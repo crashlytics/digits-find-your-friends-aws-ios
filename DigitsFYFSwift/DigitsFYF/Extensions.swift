@@ -1,4 +1,5 @@
 //
+// A better name for this file could be `StringExtensions.swift` so that it's more clear what's in here.
 //  Extensions.swift
 //  DigitsFYF
 //

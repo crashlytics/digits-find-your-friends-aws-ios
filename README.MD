@@ -7,12 +7,12 @@ This is a sample demonstrating [Digits](http://digits.com) "Find Your Friends" [
 1. Sign up for [Fabric](https://fabric.io).
 2. Download, install, and run the [Fabric Mac app] (https://fabric.io/downloads/xcode).
 3. In Fabric.app, click "+ New App" and open `DigitsFYF.xcworkspace`.
-  * Install the Digits kit via a Podfile. When prompted, ignore the suggested pod snippets.
+  * Install the Digits kit via a Podfile. When prompted, ignore the suggested pod snippets as they are already includes.
 4. In Xcode, open `DigitsFYF.xcworkspace`.
   * Add the Run Script Build Phase from Fabric.app to the DigitsFYF target.
-  * Build the project.
-5. In Fabric.app, when prompted, ignore the suggested Swift snippets.
-6. In Xcode, run the project.  
+  * Clean and Build the project.
+5. In Fabric.app, when prompted, ignore the suggested Swift snippets as they are already included.
+6. In Xcode, Clean and Run the project.  
 
 ### Setup Cognito
 
